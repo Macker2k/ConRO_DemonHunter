@@ -72,6 +72,7 @@ local ConRO_DemonHunter, ids = ...;
 		RushofChaos = {spellID = 320421, talentID = 117757},
 		ShatteredRestoration = {spellID = 389824, talentID = 112863},
 		SigilofMisery = {spellID = 207684, talentID = 112859},
+		SigilofSpite = {spellID = 390163, talentID = 117755},
 		SoulRending = {spellID = 204909, talentID = 112847},
 		SoulSigils = {spellID = 395446, talentID = 112839},
 		SwallowedAnger = {spellID = 320313, talentID = 112925},

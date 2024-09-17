@@ -186,6 +186,7 @@ function ConRO.DemonHunter.Havoc(_, timeShift, currentSpell, gcd, tChosen, pvpCh
 		local _Metamorphosis_BUFF, _, _Metamorphosis_DUR = ConRO:Aura(Buff.Metamorphosis, timeShift);
 	local _SigilofFlame, _SigilofFlame_RDY = ConRO:AbilityReady(Ability.SigilofFlame, timeShift);
 	local _SigilofFlamePS, _SigilofFlamePS_RDY = ConRO:AbilityReady(Ability.SigilofFlamePS, timeShift);
+	local _SigilofSpite, _SigilofSpite_RDY = ConRO:AbilityReady(Ability.SigilofSpite, timeShift);
 	local _TheHunt, _TheHunt_RDY = ConRO:AbilityReady(Ability.TheHunt, timeShift);
 	local _ThrowGlaive, _ThrowGlaive_RDY = ConRO:AbilityReady(Ability.ThrowGlaive, timeShift);
 		local _ThrowGlaive_CHARGES = ConRO:SpellCharges(_ThrowGlaive);
@@ -233,6 +234,11 @@ function ConRO.DemonHunter.Havoc(_, timeShift, currentSpell, gcd, tChosen, pvpCh
 		end
 
 		if not _in_combat then
+			if _ImmolationAura_RDY then
+				tinsert(ConRO.SuggestedSpells, _ImmolationAura);
+				_ImmolationAura_RDY = false;
+			end
+		
 			if _SigilofFlame_RDY and currentSpell == _TheHunt and not ConRO_PvPButton:IsVisible() then
 				tinsert(ConRO.SuggestedSpells, _SigilofFlame);
 				_SigilofFlame_RDY = false;
